@@ -11,8 +11,8 @@
 
 ## Abstract
 
-This repository provides the complete analysis pipeline for the MILENA project,
-which investigates functional microbiome signatures in a pediatric pastoral cohort
+This repository provides the complete analysis pipeline for the project "Protozoan colonization is associated with gut microbiome functional profiles in early life related to anticipated oxidative stress",
+which investigates functional microbiome signatures in a pediatric cohort
 (ages 6–59 months). The analysis links predicted functional profiles from 16S rRNA
 amplicon data (PICRUSt2-predicted KEGG Orthology, Enzyme Commission numbers, and
 MetaCyc pathways) to parasitic infection status:
@@ -124,7 +124,7 @@ Raw data are **not included** in this repository. See [`data/README.md`](data/RE
 for full file specifications.
 
 1. Obtain the raw 16S rRNA amplicon sequences (accession: _TBD upon publication_)
-2. Process with **QIIME2** (≥ 2023.5) to obtain `ASV_table.tsv` and `ASV_tax_species.user.tsv`
+2. Process with **DADA2** to obtain `ASV_table.tsv` and `ASV_tax_species.user.tsv`
 3. Run **PICRUSt2** (≥ v2.5) to generate functional predictions:
    ```bash
    picrust2_pipeline.py -s asv_sequences.fna -i ASV_table.biom -o picrust2_output/ -p 4
@@ -214,8 +214,7 @@ python docs/lightrag/index_pipeline.py
 
 If you use this code, please cite:
 
-> Torres, G.G. (2025). *MILENA: Microbiome analysis pipeline for pediatric cohort
-> studies*. GitHub. https://github.com/cobinet/Microbiome_Children_Milena_Project
+> Guerrero, G.G., et al.,
 
 See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
