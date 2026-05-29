@@ -4,7 +4,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 **Author:** Dr. rer. nat. Guillermo G. Torres  
-**Contact:** guigotoe@gmail.com  
+**Contact:** g.torres@ikmb.uni-kiel.de 
 **Repository:** https://github.com/cobinet/Microbiome_Children_Milena_Project
 
 ---
