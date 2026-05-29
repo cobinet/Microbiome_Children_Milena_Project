@@ -1,0 +1,65 @@
+# =============================================================================
+# GitHub Actions — Syntax Validation Workflow
+# Author : Dr. rer. nat. Guillermo G. Torres
+# Trigger: push or pull_request to main/master
+# Purpose: Validate Python and R script syntax on every commit.
+#          Does NOT run the full analysis (requires private data).
+# =============================================================================
+
+name: Syntax Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  python-lint:
+    name: Python syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install syntax-check tools
+        run: pip install pyflakes
+
+      - name: Check Python scripts syntax
+        run: |
+          python -m pyflakes docs/graph/build_pipeline_graph.py
+          python -m pyflakes docs/lightrag/index_pipeline.py
+
+      - name: Validate notebook is output-free
+        run: |
+          python3 - <<'EOF'
+          import json, sys, pathlib
+          nb_path = pathlib.Path("scripts/funAnalysis_metagPastoKids.ipynb")
+          nb = json.loads(nb_path.read_text())
+          has_outputs = any(
+              cell.get("outputs") or cell.get("execution_count") is not None
+              for cell in nb.get("cells", [])
+          )
+          if has_outputs:
+              print("ERROR: notebook contains outputs — run nbconvert --clear-output")
+              sys.exit(1)
+          print("OK: notebook is output-free")
+          EOF
+
+  r-lint:
+    name: R syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.4"
+
+      - name: Check R script syntax
+        run: Rscript -e "parse('scripts/AssocAnalysis.R'); cat('OK: AssocAnalysis.R parses without errors\n')"

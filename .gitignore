@@ -1,0 +1,85 @@
+# =============================================================================
+# .gitignore — MILENA Project
+# Author: Dr. rer. nat. Guillermo G. Torres
+# Only analysis scripts and documentation are tracked.
+# Raw data, results, virtual environments, and OS artifacts are excluded.
+# =============================================================================
+
+# ── Raw data (never commit patient / research data) ───────────────────────────
+data/*.tsv
+data/*.csv
+data/*.xlsx
+data/*.xls
+data/*.zip
+data/*.gz
+data/*.bz2
+data/microbiome_analysis_output/
+data/~$*
+
+# ── Result artefacts ──────────────────────────────────────────────────────────
+results/
+*.png
+*.pdf
+*.html
+*.svg
+*.csv
+
+# Original scripts in data/ — canonical commented versions are in scripts/
+data/*.R
+data/*.ipynb
+data/*.zip
+
+# Exception: keep the pipeline graph in docs/
+!docs/graph/pipeline_graph.png
+!docs/graph/pipeline_graph.dot
+
+# ── Manuscript drafts ─────────────────────────────────────────────────────────
+docs/*.docx
+docs/*.doc
+docs/*.odt
+docs/*.pdf
+
+# ── Python virtual environment ────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Jupyter artifacts ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── LightRAG storage (local vector DB — rebuild on each machine) ──────────────
+docs/lightrag/rag_storage/
+docs/lightrag/pipeline_outline.md
+
+# ── R artifacts ───────────────────────────────────────────────────────────────
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+Rplots.pdf
+
+# ── macOS artifacts ───────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# ── Editor artifacts ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+\#*\#

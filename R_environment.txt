@@ -1,0 +1,53 @@
+# =============================================================================
+# R Environment — MILENA Project
+# Author : Dr. rer. nat. Guillermo G. Torres
+# Script : AssocAnalysis.R
+#
+# To reproduce: install packages listed below, then run:
+#   Rscript scripts/AssocAnalysis.R
+#
+# This file documents the R environment used for the published analysis.
+# Regenerate with: capture.output(sessionInfo(), file="R_environment.txt")
+# =============================================================================
+
+# R Version
+# R version 4.4.x or later recommended
+
+# CRAN packages
+install.packages(c(
+  "gt",           # >= 0.10  — publication-quality HTML/LaTeX tables
+  "data.table",   # >= 1.15  — fast data manipulation
+  "dplyr",        # >= 1.1   — data wrangling (tidyverse)
+  "tidyr",        # >= 1.3   — data reshaping
+  "stringr",      # >= 1.5   — string manipulation
+  "readr",        # >= 2.1   — fast file reading/writing
+  "purrr",        # >= 1.0   — functional programming
+  "forcats",      # >= 1.0   — factor manipulation
+  "ggplot2",      # >= 3.5   — visualization
+  "gridExtra",    # >= 2.3   — multi-panel plots
+  "RColorBrewer", # >= 1.1   — colour palettes
+  "scales",       # >= 1.3   — axis/colour scaling
+  "tibble",       # >= 3.2   — modern data frames
+  "fgsea",        # >= 1.28  — fast gene set enrichment (optional extension)
+  "plotly"        # >= 4.10  — interactive plots (optional)
+))
+
+# Bioconductor packages (install via BiocManager)
+# install.packages("BiocManager")
+BiocManager::install(c(
+  "limma",      # >= 3.58  — linear models for microarray/omics (CORE dependency)
+  "vegan",      # >= 2.6   — community ecology / ordination
+  "phyloseq",   # >= 1.46  — phylogenetic sequencing data (optional preprocessing)
+  "zCompositions", # >= 1.5 — zero-imputation for compositional data
+  "ANCOMBC",    # >= 2.4   — bias-corrected differential abundance (alternative)
+  "Maaslin2",   # >= 1.16  — multivariable association models (alternative)
+  "mixOmics"    # >= 6.26  — multi-omics integration (block DIABLO, optional)
+))
+
+# Core analysis dependencies (minimum versions tested)
+# limma    >= 3.58  — REQUIRED: lmFit, eBayes, makeContrasts, topTable
+# gt       >= 0.10  — REQUIRED: gtsave HTML export
+# ggplot2  >= 3.5   — REQUIRED: volcano and lollipop plots
+# readr    >= 2.1   — REQUIRED: write_csv, write_tsv
+# dplyr    >= 1.1   — REQUIRED: data wrangling throughout
+# tibble   >= 3.2   — REQUIRED: column_to_rownames, rownames_to_column

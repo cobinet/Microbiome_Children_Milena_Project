@@ -1,0 +1,32 @@
+# =============================================================================
+# requirements.txt — MILENA Project
+# Author : Dr. rer. nat. Guillermo G. Torres
+# Python : 3.13
+# Install: pip install -r requirements.txt
+# =============================================================================
+
+# Core data science
+numpy>=2.0
+pandas>=2.0
+scipy>=1.12
+
+# Machine learning / preprocessing
+scikit-learn>=1.4
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+
+# Jupyter
+jupyter>=1.0
+nbconvert>=7.0
+ipykernel>=6.0
+
+# Knowledge graph (pipeline documentation)
+networkx>=3.2
+
+# LightRAG (local RAG indexing of pipeline scripts)
+lightrag-hku>=1.4
+
+# Utility
+pathlib2>=2.3; python_version < "3.4"

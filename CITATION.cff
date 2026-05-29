@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: "MILENA: Microbiome analysis pipeline for pediatric cohort studies"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Torres"
+    given-names: "Guillermo G."
+    name-particle: ""
+    name-suffix: "Dr. rer. nat."
+    email: "guigotoe@gmail.com"
+    orcid: ""          # add your ORCID here if available
+repository-code: "https://github.com/cobinet/Microbiome_Children_Milena_Project"
+url: "https://github.com/cobinet/Microbiome_Children_Milena_Project"
+abstract: >
+  Analysis scripts for the MILENA project: differential abundance analysis of
+  functional microbiome profiles (KEGG Orthology, Enzyme Commission numbers,
+  MetaCyc pathways) in a pediatric pastoral cohort (6-59 months), linking
+  functional signatures to parasitic co-infection status (Blastocystis hominis,
+  Giardia lamblia, Dientamoeba fragilis). Implements CLR transformation,
+  limma-based multi-contrast moderated t-tests, and publication-ready
+  visualizations.
+keywords:
+  - microbiome
+  - metagenomics
+  - differential abundance
+  - PICRUSt2
+  - limma
+  - CLR transformation
+  - pediatric cohort
+  - parasitic infection
+  - ancient DNA
+license: MIT
+version: "1.0.0"
+date-released: "2025-01-01"    # update to actual publication date
+doi: ""                         # add Zenodo or journal DOI upon publication
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Torres"
+      given-names: "Guillermo G."
+      name-suffix: "Dr. rer. nat."
+  title: ""        # add full paper title upon acceptance
+  journal: ""      # add journal name
+  year: 2025
+  doi: ""          # add DOI upon publication
